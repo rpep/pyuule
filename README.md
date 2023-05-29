@@ -1,4 +1,4 @@
-# uule
+# pyuule
 
 UULE's are Google's objects for referencing locations. This Python library allows you to encode and encode UULE's!
 
