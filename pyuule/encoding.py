@@ -28,12 +28,13 @@ def decode_a(uule) -> UULE_A:
     for line in lines:
         if ":" in line:
             key, value = line.split(":")
-            data[key] = value
+            data[key.strip()] = value.strip()
     # Rescale to true lat/long
+    print(lines, data)
     data["latitude"] = float(data.pop("latitude_e7")) / 10e7
     data["longitude"] = float(data.pop("longitude_e7")) / 10e7
     # Convert to appropriate data types
-    data["radius"] = int(data["radius"])
+    data["radius"] = float(data["radius"])
     data["role"] = int(data["role"])
     data["producer"] = int(data["producer"])
     data["provenance"] = int(data["provenance"])

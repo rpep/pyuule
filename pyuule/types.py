@@ -8,4 +8,4 @@ class UULE_A:
     role: int
     provenance: int
     timestamp: int
-    radius: int
+    radius: float

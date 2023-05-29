@@ -8,9 +8,14 @@ There are two forms of UULE. The first type, prefixed by a 'w+':
 ```
 w+CAIQICIhTm90dGluZ2hhbSxFbmdsYW5kLFVuaXRlZCBLaW5nZG9t
 ```
-can be used to direct searches to a specific location. The location must be drawn from Google's [list of canonical place names](https://developers.google.com/google-ads/api/data/geotargets"). A search on Google can then be done with results drawn from the area around this location with a UULE query parameter added, for e.g.:
+can be used to direct searches to a specific location. The location must be drawn from Google's [list of canonical place names](https://developers.google.com/google-ads/api/data/geotargets"). A search on Google can then be done with results drawn from the area around this location with a UULE query parameter added, for e.g. the following search is scoped to results near the location of Nottingham in the UK:
 [www.google.com/search?q=restaurants&uule=w+CAIQICIhTm90dGluZ2hhbSxFbmdsYW5kLFVuaXRlZCBLaW5nZG9t](http://www.google.com/search?q=restaurants&uule=w+CAIQICIhTm90dGluZ2hhbSxFbmdsYW5kLFVuaXRlZCBLaW5nZG9t)
 
+The second type of UULE is often attached to cookies from Google, for e.g.:
+```
+a+cm9sZToxCnByb2R1Y2VyOjEyCnByb3ZlbmFuY2U6MAp0aW1lc3RhbXA6MTY4MDg3NzkwNjIzNjczNgpsYXRsbmd7CmxhdGl0dWRlX2U3OjMwMjY2NjY2MApsb25naXR1ZGVfZTc6LTk3NzMzMzMwMAp9CnJhZGl1czotMQo
+```
+These encode some metadata, but most interestingly, the radius over which to search, and the latitude and longitude of the searcher.
 
 ## Usage
 
@@ -27,8 +32,7 @@ This library allows you to encode and decode query parameter UULE's:
 ```
 
 and additionaly allows you to decode cookie UULEs:
-
-```
+```python3
 >>> pyuule.decode_a("a+cm9sZToxCnByb2R1Y2VyOjEyCnByb3ZlbmFuY2U6MAp0aW1lc3RhbXA6MTY4MDg3NzkwNjIzNjczNgpsYXRsbmd7CmxhdGl0dWRlX2U3OjMwMjY2NjY2MApsb25naXR1ZGVfZTc6LTk3NzMzMzMwMAp9CnJhZGl1czotMQo")
 {
     "role": 1,
@@ -38,7 +42,7 @@ and additionaly allows you to decode cookie UULEs:
     "latitude": 3.0266666,
     "longitude": -9.77333300,
     "radius": -1,
-}
+:   
 ```
 
 
