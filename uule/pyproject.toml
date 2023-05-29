@@ -1,0 +1,22 @@
+[build-system]
+
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "uule"
+authors = [
+    {name = "Ryan Pepper", email = "ryan.pepper1@gmail.com"},
+]
+description = "Library for working with UULEs"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "MIT"}
+classifiers = [
+    "Framework :: Django",
+    "Programming Language :: Python :: 3",
+]
+dynamic = ["version"]
+
+[tool.setuptools.dynamic]
+version = {attr = "uule.VERSION"}

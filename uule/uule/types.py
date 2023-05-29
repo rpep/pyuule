@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 
-@datclass
-class UULE_LatLng
+@dataclass
+class UULE_LatLng:
     latitude_e7: int
     longitude_e7: int
 

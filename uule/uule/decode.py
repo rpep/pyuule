@@ -1,4 +1,5 @@
 import base64
+from .types import UULE_A, UULE_W
 
 def decode_a(uule_encoded: str) -> UULE_A:
     """
