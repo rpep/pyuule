@@ -6,7 +6,7 @@
 ![PyPI - License](https://img.shields.io/pypi/l/pyuule)
 ![PyPi - Downloads Count](https://img.shields.io/pypi/dm/pyuule)
 
-UULE's are Google's objects for referencing locations. This Python library allows you to encode and encode UULE's!
+UULE's are Google's objects for referencing locations. This Python library allows you to encode and decode UULE's!
 
 ## What is a UULE anyway?
 
